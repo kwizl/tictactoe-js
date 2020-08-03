@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(../img/back.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+  font-weight: 300;
+  position: relative;
+  height: 100vh;
+  color: #555;
+}
+
+header {
+  text-align: center;
+  padding-top: 4%;
+}
+
+header > p {
+  font-size: 28px;
+  font-weight: 700;
+  color: rgb(94, 94, 94);
+}
+
+.player-container {
+  display: flex;
+  padding-top: 5%;
+}
+
+.player {
+  width: 50%;
+  text-align: center;
+}
+
+.player > p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.board-container {
+  padding: 6% 0 2% 0;
+  display: flex;
+  justify-content: center;
+}
+
+.board-row > td {
+  width: 80px;
+  height: 80px;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.game-restart {
+  text-align: center;
+  padding: 2%;
+}
+
+#restart {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.5s;
+  background-color: rgb(199, 66, 66);
+}
+
+#restart:hover {
+  border: none;
+  border-radius: 5px;
+  color: rgb(124, 124, 124);
+  font-size: 18px;
+  padding: 15px;
+  transition: 0.5s;
+}
+
+.winner {
+  text-align: center;
+}
+
+.winner > p {
+  font-size: 25px;
+  color: black;
+}

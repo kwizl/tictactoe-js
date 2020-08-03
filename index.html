@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Game</title>
+</head>
+<body>
+  <header>
+    <p>TIC TAC TOE</p>
+  </header>
+  <main>
+    <div class="player-container">
+      <div class="player">
+        <p>Player 1</p>
+      </div>
+      <div class="player">
+        <p>Player 2</p>
+      </div>
+    </div>
+    <div class="board-container">
+      <table class="board">
+        <tbody>
+          <tr class="board-row">
+            <td id="0">1</td>
+            <td id="1" class="b-left b-right">2</td>
+            <td id="2">3</td>
+          </tr>
+          <tr class="board-row">
+            <td id="3" class="b-top b-bottom">4</td>
+            <td id="4" class="b-all">5</td>
+            <td id="5" class="b-top b-bottom">6</td>
+          </tr>
+          <tr class="board-row">
+            <td id="6">7</td>
+            <td id="7" class="b-left b-right">8</td>
+            <td id="8">9</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="game-restart">
+      <button id="restart">Restart</button>
+    </div>
+    <div class='winner'>
+      <p>Win or Draw</p>
+    </div>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>
