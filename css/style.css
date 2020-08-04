@@ -61,6 +61,55 @@ header > p {
   padding: 2%;
 }
 
+#player-name > input {
+  display: block;
+  margin: 8% 0 0 8%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 200px;
+  color: #AF7235;
+}
+
+.btnSubmit {
+  margin-top: 10%;
+  color: #AF7235;
+  font-weight: 500;
+  padding: 5px 8px 5px 8px;
+}
+
+#form-wrapper {
+  background-color: #AF7235;
+  position: fixed;
+  margin-left: 35%;
+  top: 30%;
+  display: block;
+  width: 30%;
+  height: 40%;
+  border-radius: 5px;
+}
+
+.form-title {
+  margin-top: 8%;
+  text-align: center;
+}
+
+.form-title > p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#player-name {
+  text-align: center;  
+}
+
+#id {
+  font-size: 25px;
+  font-weight: 700;
+}
+
 #restart {
   padding: 10px;
   border: none;

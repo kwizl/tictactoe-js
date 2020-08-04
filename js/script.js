@@ -19,6 +19,7 @@ const Player = (symbol) => {
   return {setMovement}
 };
 
+
 function changeColor(box) {
   console.log('ha');
   box.style.backgroundColor = 'blue';
