@@ -17,6 +17,7 @@
       </div>
       <div class="player">
         <p id="id">VS</p>
+        <p id="board-error"></p>
       </div>
       <div class="player">
         <p id='two'></p>
@@ -26,19 +27,19 @@
       <table class="board">
         <tbody>
           <tr class="board-row">
-            <td id="0"></td>
-            <td id="1" class="b-left b-right"></td>
-            <td id="2"></td>
+            <td class='td-data' id="0"></td>
+            <td class='td-data' id="1"></td>
+            <td class='td-data' id="2"></td>
           </tr>
           <tr class="board-row">
-            <td id="3" class="b-top b-bottom"></td>
-            <td id="4" class="b-all"></td>
-            <td id="5" class="b-top b-bottom"></td>
+            <td class='td-data' id="3"></td>
+            <td class='td-data' id="4"></td>
+            <td class='td-data' id="5"></td>
           </tr>
           <tr class="board-row">
-            <td id="6"></td>
-            <td id="7" class="b-left b-right"></td>
-            <td id="8"></td>
+            <td class='td-data' id="6"></td>
+            <td class='td-data' id="7" ></td>
+            <td class='td-data' id="8"></td>
           </tr>
         </tbody>
       </table>
@@ -61,7 +62,11 @@
       <p>Win or Draw</p>
     </div>
   </main>
-  <script src="js/script.js"></script>
-  <script src="js/display.js"></script>
+  <!--<script src="js/script.js"></script>-->
+  <script type="module" src="js/display.js"></script>
+  <script type="module" src="js/logic.js"></script>
+  <script type="module" src="js/board.js"></script>
+  <script type="module" src="js/player.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

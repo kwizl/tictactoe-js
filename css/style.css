@@ -63,13 +63,13 @@ header > p {
 
 #player-name > input {
   display: block;
-  margin: 8% 0 0 8%;
+  margin: 10% 0 0 10%;
   padding: 10px;
   border: 1px solid #ccc;
   font-size: 16px;
   border-radius: 5px;
   box-sizing: border-box;
-  width: 200px;
+  width: 80%;
   color: #AF7235;
 }
 
@@ -78,16 +78,21 @@ header > p {
   color: #AF7235;
   font-weight: 500;
   padding: 5px 8px 5px 8px;
+  width: 40%;
 }
 
+#error, #board-error {
+  color: red;
+}
 #form-wrapper {
   background-color: #AF7235;
   position: fixed;
+  text-align: center;
   margin-left: 35%;
   top: 30%;
   display: block;
   width: 30%;
-  height: 40%;
+  height: 45%;
   border-radius: 5px;
 }
 
@@ -102,7 +107,8 @@ header > p {
 }
 
 #player-name {
-  text-align: center;  
+  text-align: center;
+  margin: auto;
 }
 
 #id {
