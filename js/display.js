@@ -65,6 +65,9 @@ const Display = () => {
     window.onload = openWindow;
   };
   
+
+
+
   return { onloadWindow, submit, addPlayerNames };
 };
 

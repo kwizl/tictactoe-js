@@ -47,7 +47,14 @@ const Logic = () => {
     return current_player
   }
 
-  return { checkWinner, boxValidation, playerTurn, playerMark}
+  document.querySelector('#restart').addEventListener('click', function(){
+    for (let i = 0; i < 9; i++) {
+      document.getElementById(i).textContent = "";
+    }
+    current_player = 'X'
+  });
+
+  return { checkWinner, boxValidation, playerTurn, playerMark }
 }
 
 let logic = Logic()
