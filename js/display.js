@@ -29,15 +29,17 @@ const Display = () => {
     const btnSubmit = document.querySelector('.btnSubmit');
     btnSubmit.onclick = (e) => {
       e.preventDefault();
+
+      const playerOneValue = document.querySelector('#player-one').value;
+      const playerTwoValue = document.querySelector('#player-two').value;
+      const one = document.getElementById('one');
+      const two = document.getElementById('two');
+      one.textContent = playerOneValue;
+      two.textContent = playerTwoValue;
+
       closeWindow();
     }
 
-    const playerOneValue = document.querySelector('#player-one').value;
-    const playerTwoValue = document.querySelector('#player-two').value;
-    const one = document.getElementById('one');
-    const two = document.getElementById('two');
-    one.textContent = playerOneValue;
-    two.textContent = playerTwoValue;
   };
 
   const addNamesLogic = (playerOneValue, playerTwoValue) => {
