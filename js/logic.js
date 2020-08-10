@@ -2,27 +2,28 @@ import { Player } from './player.js'
 import { Board } from './board.js'
 
 const Logic = () => {
+  let array = Board();
+  let board = array.boardChoices();
+
   let current_player = 'X';
   const playerOne = Player('X');
   const playerTwo = Player('O');
   const player = [playerOne, playerTwo]
 
   const checkWinner = (label, array) => {
-    win_a = (array[0][0] == label) && (array[0][1] == label) && (array[0][2] == label)
-    win_b = (array[1][0] == label) && (array[1][1] == label) && (array[1][2] == label)
-    win_c = (array[2][0] == label) && (array[2][1] == label) && (array[2][2] == label)
-    win_d = (array[0][0] == label) && (array[1][1] == label) && (array[2][2] == label)
-    win_e = (array[2][0] == label) && (array[1][1] == label) && (array[0][2] == label)
-    win_f = (array[0][0] == label) && (array[1][0] == label) && (array[2][0] == label)
-    win_g = (array[0][1] == label) && (array[1][1] == label) && (array[2][1] == label)
-    win_h = (array[0][2] == label) && (array[1][2] == label) && (array[2][2] == label)
+    const win_a = (array[0] == label) && (array[1] == label) && (array[2] == label)
+    const win_b = (array[3] == label) && (array[4] == label) && (array[5] == label)
+    const win_c = (array[6] == label) && (array[7] == label) && (array[8] == label)
+    const win_d = (array[0] == label) && (array[3] == label) && (array[6] == label)
+    const win_e = (array[1] == label) && (array[4] == label) && (array[7] == label)
+    const win_f = (array[2] == label) && (array[5] == label) && (array[8] == label)
+    const win_g = (array[0] == label) && (array[4] == label) && (array[8] == label)
+    const win_h = (array[2] == label) && (array[4] == label) && (array[6] == label)
 
-    win_a || win_b || win_c || win_d || win_e || win_f || win_g || win_h
+    return win_a || win_b || win_c || win_d || win_e || win_f || win_g || win_h
   }
 
   const boxValidation = (idx) => {
-    console.log('entered validation')
-    console.log(idx);
     if(document.getElementById(idx).textContent === 'X' || document.getElementById(idx).textContent === 'O'){
       return false;
     }
@@ -37,7 +38,9 @@ const Logic = () => {
     for (let i = 0; i < td.length; i++) {
       td[i].addEventListener('click', () => {
         if (boxValidation(i)) {
-        td[i].textContent = playerTurn();
+          let new_mark = playerTurn();
+          td[i].textContent = new_mark;
+          board.splice(i, i, new_mark)
         }
       });
     }
@@ -51,7 +54,7 @@ const Logic = () => {
   }
 
   // restart button
-  document.querySelector('#restart').addEventListener('click', function(){
+  document.querySelector('#restart').addEventListener('click', () => {
     for (let i = 0; i < 9; i++) {
       document.getElementById(i).textContent = "";
     }
