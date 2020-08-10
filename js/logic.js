@@ -31,7 +31,7 @@ const Logic = () => {
   const boxValidation = (idx) => {
     let box = document.getElementById(idx);
 
-    if(box.textContent === 'X' || box.textContent === 'O') {
+    if (box.textContent === 'X' || box.textContent === 'O') {
       return false;
     }
     else {

@@ -94,11 +94,11 @@ header > p {
   background-color: #AF7235;
   position: fixed;
   text-align: center;
-  margin-left: 35%;
+  margin-left: calc((100vw - 400px) / 2);
   top: 30%;
   display: block;
-  width: 30%;
-  height: 45%;
+  width: 400px;
+  height: 350px;
   border-radius: 5px;
 }
 

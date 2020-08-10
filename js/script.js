@@ -11,9 +11,8 @@ function restartGame() {
 const Player = (symbol) => {
   
   const setMovement = index => {
-    boardGame[index] = symbol; // doing checkings for positioning
+    boardGame[index] = symbol; doing checkings for positioning
   }
-
 
   return {setMovement}
 };
@@ -41,33 +40,26 @@ window.onload = restartGame();
 const restart = document.getElementById('restart');
 restart.onclick = () => restartGame();
 
-// clicked --> send target to happen event
-// order --> which 'player' has checked
-// checkings if movement is possible
-// set movement done on array of positions (boardGame)
-// render movement done to players
+clicked --> send target to happen event
+order --> which 'player' has checked
+checkings if movement is possible
+set movement done on array of positions (boardGame)
+render movement done to players
 
+1. Player One is initialized
 
-import player from './player';
+2. Player Two is initialized
 
-const player_one = document.getElementById('player-one').value;
-const player_two = document.getElementById('player-two').value;
-const playerOne = player(player_one, 'X');
-const playerTwo = player(player_two, 'O');
+3. Player One clicks on box
+
+4. Check if box text has X or O
+
+5. Change the box to X
+
+6. Player Two clicks on box
+
+7. Check if box text has X or O
+
+8. Change the box to O
+
 */
-
-// 1. Player One is initialized
-
-// 2. Player Two is initialized
-
-// 3. Player One clicks on box
-
-// 4. Check if box text has X or O
-
-// 5. Change the box to X
-
-// 6. Player Two clicks on box
-
-// 7. Check if box text has X or O
-
-// 8. Change the box to O
