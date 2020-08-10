@@ -21,14 +21,14 @@ const Logic = () => {
   }
 
   const boxValidation = (idx) => {
-    let box = document.getElementById(idx);
-    box.addEventListener('click', () => {
-      if (typeof box.textContent == String) {
-        return false;
-      } else {
-        return true;
-      }
-    }) 
+    console.log('entered validation')
+    console.log(idx);
+    if(document.getElementById(idx).textContent === 'X' || document.getElementById(idx).textContent === 'O'){
+      return false;
+    }
+    else {
+      return true;
+    }
   }
 
   const playerMark = () => {
@@ -36,17 +36,21 @@ const Logic = () => {
 
     for (let i = 0; i < td.length; i++) {
       td[i].addEventListener('click', () => {
+        if (boxValidation(i)) {
         td[i].textContent = playerTurn();
+        }
       });
     }
   }
 
+  // change mark for player turn
   let playerTurn = () => {
     current_player === 'X' ? current_player = 'O' : current_player = 'X';
     
     return current_player
   }
 
+  // restart button
   document.querySelector('#restart').addEventListener('click', function(){
     for (let i = 0; i < 9; i++) {
       document.getElementById(i).textContent = "";
