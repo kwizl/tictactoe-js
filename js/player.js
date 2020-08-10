@@ -1,8 +1,6 @@
-const Player = (name, mark) => {
-  const Name = () => name;
+const Player = (mark) => {
   const Mark = () => mark;
-
-  return { Name, Mark }
+  return { Mark }
 }
 
 export { Player }

@@ -1,5 +1,5 @@
-import { Logic } from './logic.js'
-import { Board } from './board.js'
+// import { Logic } from './logic.js'
+// import { Board } from './board.js'
 // 1. Player One is initialized
 
 // 2. Player Two is initialized
@@ -16,14 +16,14 @@ import { Board } from './board.js'
 
 // 8. Change the box to O
 
-let logic = Logic();
-let board = Board();
+// let logic = Logic();
+// let board = Board();
 
-let state = true;
-let i = 0
-while ((state) && (i <= 8)) {
-  logic.playerTurn(i, 0, board.boardChoices(), 'X')
-  i +=  1
-  logic.playerTurn(i, 1, board.boardChoices(), 'O')
-  i += 1
-}
+// let state = true;
+// let i = 0
+// while ((state) && (i <= 8)) {
+//   logic.playerTurn(i, 0, board.boardChoices(), 'X')
+//   i +=  1
+//   logic.playerTurn(i, 1, board.boardChoices(), 'O')
+//   i += 1
+// }
