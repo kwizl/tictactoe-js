@@ -40,7 +40,14 @@ const Logic = () => {
         if (boxValidation(i)) {
           let new_mark = playerTurn();
           td[i].textContent = new_mark;
-          board.splice(i, i, new_mark)
+          board[i] = new_mark;
+          if (checkWinner(new_mark, board)){
+            if (new_mark === 'O') {
+              document.getElementById('one').style.fontWeight = 'bold';
+            } else {
+              document.getElementById('two').style.fontWeight = 'bold';
+            }
+          }
         }
       });
     }
@@ -58,6 +65,8 @@ const Logic = () => {
     for (let i = 0; i < 9; i++) {
       document.getElementById(i).textContent = "";
     }
+    document.getElementById('one').style.fontWeight = 'normal';
+    document.getElementById('two').style.fontWeight = 'normal';
     current_player = 'X'
   });
 
