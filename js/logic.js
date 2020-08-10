@@ -1,4 +1,3 @@
-import { Player } from './player.js'
 import { Board } from './board.js'
 
 const Logic = () => {
@@ -6,9 +5,6 @@ const Logic = () => {
   let board = array.boardChoices();
 
   let current_player = 'X';
-  const playerOne = Player('X');
-  const playerTwo = Player('O');
-  const player = [playerOne, playerTwo]
 
   const checkWinner = (label, array) => {
     const win_a = (array[0] == label) && (array[1] == label) && (array[2] == label)
@@ -33,7 +29,9 @@ const Logic = () => {
   }
 
   const boxValidation = (idx) => {
-    if(document.getElementById(idx).textContent === 'X' || document.getElementById(idx).textContent === 'O'){
+    let box = document.getElementById(idx);
+
+    if(box.textContent === 'X' || box.textContent === 'O') {
       return false;
     }
     else {
@@ -42,8 +40,8 @@ const Logic = () => {
   }
 
   const gameDrawn = () => {
-    document.getElementById('one').style.fontSize = '50px';
-    document.getElementById('two').style.fontSize = '50px';
+    document.getElementById('one').style.fontSize = '45px';
+    document.getElementById('two').style.fontSize = '45px';
   }
 
   const playerMark = () => {
@@ -55,18 +53,20 @@ const Logic = () => {
           let new_mark = playerTurn();
           td[i].textContent = new_mark;
           board[i] = new_mark;
-          if (checkWinner(new_mark, board)){
+          if (checkWinner(new_mark, board)) {
             if (new_mark === 'O') {
-              document.getElementById('one').style.fontSize = '30px';
+              document.getElementById('one').style.fontSize = '40px';
+              document.getElementById('winner').textContent = 'WINNER!'
             } else {
-              document.getElementById('two').style.fontSize = '30px';
+              document.getElementById('two').style.fontSize = '40px';
+              document.getElementById('winner').textContent = 'WINNER!'
             }
           }
           
           if(!stillPlayable(board)) {
             gameDrawn();
+            document.getElementById('winner').textContent = 'DRAW'
           }
-
         }
       });
     }
@@ -81,12 +81,13 @@ const Logic = () => {
   // restart button
   document.querySelector('#restart').addEventListener('click', () => {
     for (let i = 0; i < 9; i++) {
-      document.getElementById(i).textContent = "";
+      document.getElementById(i).textContent = '';
     }
     document.getElementById('one').style.fontSize = '20px';
     document.getElementById('two').style.fontSize = '20px';
-    board = array.boardChoices();    
-    current_player = 'X'
+    board = array.boardChoices();
+    document.getElementById('winner').textContent = '';
+    current_player = 'X';
     
   });
 

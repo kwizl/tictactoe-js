@@ -84,6 +84,12 @@ header > p {
 #error, #board-error {
   color: red;
 }
+
+#winner {
+  font-size: 30px;
+  font-weight: 700;
+}
+
 #form-wrapper {
   background-color: #AF7235;
   position: fixed;
