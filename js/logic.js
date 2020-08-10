@@ -23,6 +23,15 @@ const Logic = () => {
     return win_a || win_b || win_c || win_d || win_e || win_f || win_g || win_h
   }
 
+  const stillPlayable = (b) => {
+    for (let i = 0; i < 9; i++) {
+      if (b[i] != 'X' && b[i] != 'O') {
+        return true;
+      }
+    }
+    return false;
+  }
+
   const boxValidation = (idx) => {
     if(document.getElementById(idx).textContent === 'X' || document.getElementById(idx).textContent === 'O'){
       return false;
@@ -30,6 +39,11 @@ const Logic = () => {
     else {
       return true;
     }
+  }
+
+  const gameDrawn = () => {
+    document.getElementById('one').style.fontSize = '50px';
+    document.getElementById('two').style.fontSize = '50px';
   }
 
   const playerMark = () => {
@@ -43,11 +57,16 @@ const Logic = () => {
           board[i] = new_mark;
           if (checkWinner(new_mark, board)){
             if (new_mark === 'O') {
-              document.getElementById('one').style.fontWeight = 'bold';
+              document.getElementById('one').style.fontSize = '30px';
             } else {
-              document.getElementById('two').style.fontWeight = 'bold';
+              document.getElementById('two').style.fontSize = '30px';
             }
           }
+          
+          if(!stillPlayable(board)) {
+            gameDrawn();
+          }
+
         }
       });
     }
@@ -56,7 +75,6 @@ const Logic = () => {
   // change mark for player turn
   let playerTurn = () => {
     current_player === 'X' ? current_player = 'O' : current_player = 'X';
-    
     return current_player
   }
 
@@ -65,9 +83,11 @@ const Logic = () => {
     for (let i = 0; i < 9; i++) {
       document.getElementById(i).textContent = "";
     }
-    document.getElementById('one').style.fontWeight = 'normal';
-    document.getElementById('two').style.fontWeight = 'normal';
+    document.getElementById('one').style.fontSize = '20px';
+    document.getElementById('two').style.fontSize = '20px';
+    board = array.boardChoices();    
     current_player = 'X'
+    
   });
 
   return { checkWinner, boxValidation, playerTurn, playerMark }
