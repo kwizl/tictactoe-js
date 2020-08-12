@@ -38,15 +38,14 @@ const Display = () => {
       two.textContent = playerTwoValue;
 
       closeWindow();
-    }
-
+    };
   };
 
   const addNamesLogic = (playerOneValue, playerTwoValue) => {
     if ((playerOneValue == null || playerOneValue === '') || (playerTwoValue == null || playerTwoValue === '')) {
       document.getElementById('error').innerHTML = 'Fill all the required fields';
     } else {
-      closeWindow;
+      closeWindow();
     }
   };
 
@@ -64,9 +63,6 @@ const Display = () => {
   const onloadWindow = () => {
     window.onload = openWindow;
   };
-  
-
-
 
   return { onloadWindow, submit, addPlayerNames };
 };
