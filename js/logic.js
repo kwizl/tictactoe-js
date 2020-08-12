@@ -3,7 +3,7 @@ import { Board } from './board.js'
 const Logic = () => {
   const array = Board();
   let board = array.boardChoices();
-
+  var gameON = true;
   let currentPlayer = 'X';
 
   const checkWinner = (label, array) => {
@@ -47,23 +47,27 @@ const Logic = () => {
 
     for (let i = 0; i < td.length; i++) {
       td[i].addEventListener('click', () => {
-        if (boxValidation(i)) {
-          let new_mark = playerTurn();
-          td[i].textContent = new_mark;
-          board[i] = new_mark;
-          if (checkWinner(new_mark, board)) {
-            if (new_mark === 'O') {
-              document.getElementById('one').style.fontSize = '40px';
-              document.getElementById('winner').textContent = 'WINNER!'
-            } else {
-              document.getElementById('two').style.fontSize = '40px';
-              document.getElementById('winner').textContent = 'WINNER!'
+        if (gameON){
+          if (boxValidation(i)) {
+            let new_mark = playerTurn();
+            td[i].textContent = new_mark;
+            board[i] = new_mark;
+            if (checkWinner(new_mark, board)) {
+              gameON = false;
+              if (new_mark === 'O') {
+                document.getElementById('one').style.fontSize = '40px';
+                document.getElementById('winner').textContent = 'WINNER!'
+              } else {
+                document.getElementById('two').style.fontSize = '40px';
+                document.getElementById('winner').textContent = 'WINNER!'
+              }
             }
-          }
-          
-          if(!stillPlayable(board)) {
-            gameDrawn();
-            document.getElementById('winner').textContent = 'DRAW'
+            
+            if(!stillPlayable(board)) {
+              gameDrawn();
+              document.getElementById('winner').textContent = 'DRAW'
+              gameON = false;
+            }
           }
         }
       });
@@ -86,6 +90,7 @@ const Logic = () => {
     board = array.boardChoices();
     document.getElementById('winner').textContent = '';
     currentPlayer = 'X';
+    gameON = true;
   });
 
   return {
