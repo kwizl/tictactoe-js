@@ -1,51 +1,49 @@
 import { Board } from './board.js'
 
 const Logic = () => {
-  let array = Board();
+  const array = Board();
   let board = array.boardChoices();
 
-  let current_player = 'X';
+  let currentPlayer = 'X';
 
   const checkWinner = (label, array) => {
-    const win_a = (array[0] == label) && (array[1] == label) && (array[2] == label)
-    const win_b = (array[3] == label) && (array[4] == label) && (array[5] == label)
-    const win_c = (array[6] == label) && (array[7] == label) && (array[8] == label)
-    const win_d = (array[0] == label) && (array[3] == label) && (array[6] == label)
-    const win_e = (array[1] == label) && (array[4] == label) && (array[7] == label)
-    const win_f = (array[2] == label) && (array[5] == label) && (array[8] == label)
-    const win_g = (array[0] == label) && (array[4] == label) && (array[8] == label)
-    const win_h = (array[2] == label) && (array[4] == label) && (array[6] == label)
+    const wina = (array[0] === label) && (array[1] === label) && (array[2] === label);
+    const winb = (array[3] === label) && (array[4] === label) && (array[5] === label);
+    const winc = (array[6] === label) && (array[7] === label) && (array[8] === label);
+    const wind = (array[0] === label) && (array[3] === label) && (array[6] === label);
+    const wine = (array[1] === label) && (array[4] === label) && (array[7] === label);
+    const winf = (array[2] === label) && (array[5] === label) && (array[8] === label);
+    const wing = (array[0] === label) && (array[4] === label) && (array[8] === label);
+    const winh = (array[2] === label) && (array[4] === label) && (array[6] === label);
 
-    return win_a || win_b || win_c || win_d || win_e || win_f || win_g || win_h
-  }
+    return wina || winb || winc || wind || wine || winf || wing || winh;
+  };
 
   const stillPlayable = (b) => {
     for (let i = 0; i < 9; i++) {
-      if (b[i] != 'X' && b[i] != 'O') {
+      if (b[i] !== 'X' && b[i] !== 'O') {
         return true;
       }
     }
     return false;
-  }
+  };
 
   const boxValidation = (idx) => {
-    let box = document.getElementById(idx);
+    const box = document.getElementById(idx);
 
     if (box.textContent === 'X' || box.textContent === 'O') {
       return false;
     }
-    else {
-      return true;
-    }
-  }
+    return true;
+  };
 
   const gameDrawn = () => {
     document.getElementById('one').style.fontSize = '45px';
     document.getElementById('two').style.fontSize = '45px';
-  }
+  };
 
   const playerMark = () => {
-    let td = document.querySelectorAll('.td-data')
+    const td = document.querySelectorAll('.td-data');
 
     for (let i = 0; i < td.length; i++) {
       td[i].addEventListener('click', () => {
@@ -74,9 +72,9 @@ const Logic = () => {
 
   // change mark for player turn
   let playerTurn = () => {
-    current_player === 'X' ? current_player = 'O' : current_player = 'X';
-    return current_player
-  }
+    currentPlayer === 'X' ? currentPlayer = 'O' : currentPlayer = 'X';
+    return currentPlayer;
+  };
 
   // restart button
   document.querySelector('#restart').addEventListener('click', () => {
@@ -87,12 +85,13 @@ const Logic = () => {
     document.getElementById('two').style.fontSize = '20px';
     board = array.boardChoices();
     document.getElementById('winner').textContent = '';
-    current_player = 'X';
-    
+    currentPlayer = 'X';
   });
 
-  return { checkWinner, boxValidation, playerTurn, playerMark }
-}
+  return {
+    checkWinner, boxValidation, playerTurn, playerMark,
+  };
+};
 
-let logic = Logic()
-logic.playerMark()
+const logic = Logic();
+logic.playerMark();
