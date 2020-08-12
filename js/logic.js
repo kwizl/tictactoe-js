@@ -67,6 +67,7 @@ const Logic = () => {
     const td = document.querySelectorAll('.td-data');
 
     for (let i = 0; i < td.length; i += 1) {
+      // eslint-disable-next-line no-loop-func
       td[i].addEventListener('click', () => {
         if (gameON) {
           if (boxValidation(i)) {
