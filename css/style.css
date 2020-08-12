@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(../img/back.jpg);
+  background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(img/back.jpg);
   background-size: cover;
   background-position: center;
   font-family: sans-serif;
@@ -70,18 +70,19 @@ header > p {
   border-radius: 5px;
   box-sizing: border-box;
   width: 80%;
-  color: #AF7235;
+  color: #af7235;
 }
 
 .btnSubmit {
   margin-top: 10%;
-  color: #AF7235;
+  color: #af7235;
   font-weight: 500;
   padding: 5px 8px 5px 8px;
   width: 40%;
 }
 
-#error, #board-error {
+#error,
+#board-error {
   color: red;
 }
 
@@ -91,7 +92,7 @@ header > p {
 }
 
 #form-wrapper {
-  background-color: #AF7235;
+  background-color: #af7235;
   position: fixed;
   text-align: center;
   margin-left: calc((100vw - 400px) / 2);
