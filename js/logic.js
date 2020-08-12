@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/extensions
 import { Board } from './board.js';
 
 const Logic = () => {
@@ -20,8 +21,12 @@ const Logic = () => {
   };
 
   // change mark for player turn
-  let playerTurn = () => {
-    currentPlayer === 'X' ? currentPlayer = 'O' : currentPlayer = 'X';
+  const playerTurn = () => {
+    if (currentPlayer === 'X') {
+      currentPlayer = 'O';
+    } else {
+      currentPlayer = 'X';
+    }
     return currentPlayer;
   };
 
@@ -93,7 +98,9 @@ const Logic = () => {
     gameON = true;
   });
 
-  return { checkWinner, boxValidation, playerTurn, playerMark };
+  return {
+    checkWinner, boxValidation, playerTurn, playerMark,
+  };
 };
 
 const logic = Logic();
