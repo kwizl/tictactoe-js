@@ -7,4 +7,4 @@ const Board = () => {
   return { boardChoices };
 };
 
-export default Board;
+export { Board };
