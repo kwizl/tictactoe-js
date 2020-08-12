@@ -19,6 +19,12 @@ const Logic = () => {
     return wina || winb || winc || wind || wine || winf || wing || winh;
   };
 
+  // change mark for player turn
+  let playerTurn = () => {
+    currentPlayer === 'X' ? currentPlayer = 'O' : currentPlayer = 'X';
+    return currentPlayer;
+  };
+
   const stillPlayable = (b) => {
     for (let i = 0; i < 9; i += 1) {
       if (b[i] !== 'X' && b[i] !== 'O') {
@@ -62,22 +68,16 @@ const Logic = () => {
                 document.getElementById('winner').textContent = 'WINNER!';
               }
             }
-            
-            if(!stillPlayable(board)) {
+
+            if (!stillPlayable(board)) {
               gameDrawn();
               document.getElementById('winner').textContent = 'DRAW';
               gameON = false;
             }
           }
         }
-      })
+      });
     }
-  };
-
-  // change mark for player turn
-  let playerTurn = () => {
-    currentPlayer === 'X' ? currentPlayer = 'O' : currentPlayer = 'X';
-    return currentPlayer;
   };
 
   // restart button
@@ -93,9 +93,7 @@ const Logic = () => {
     gameON = true;
   });
 
-  return {
-    checkWinner, boxValidation, playerTurn, playerMark,
-  };
+  return { checkWinner, boxValidation, playerTurn, playerMark };
 };
 
 const logic = Logic();
