@@ -53,6 +53,16 @@ const Logic = () => {
     document.getElementById('two').style.fontSize = '45px';
   };
 
+  const lastWinMove = (mark) => {
+    if (mark === 'O') {
+      document.getElementById('one').style.fontSize = '40px';
+      document.getElementById('winner').textContent = 'WINNER!';
+    } else {
+      document.getElementById('two').style.fontSize = '40px';
+      document.getElementById('winner').textContent = 'WINNER!';
+    }
+  };
+
   const playerMark = () => {
     const td = document.querySelectorAll('.td-data');
 
@@ -65,19 +75,14 @@ const Logic = () => {
             board[i] = newMark;
             if (checkWinner(newMark, board)) {
               gameON = false;
-              if (newMark === 'O') {
-                document.getElementById('one').style.fontSize = '40px';
-                document.getElementById('winner').textContent = 'WINNER!';
-              } else {
-                document.getElementById('two').style.fontSize = '40px';
-                document.getElementById('winner').textContent = 'WINNER!';
-              }
+              lastWinMove('O');
             }
-
-            if (!stillPlayable(board)) {
+            if (!stillPlayable(board) && !checkWinner(newMark, board)) {
               gameDrawn();
               document.getElementById('winner').textContent = 'DRAW';
               gameON = false;
+            } else if (!stillPlayable(board) && checkWinner(newMark, board)) {
+              lastWinMove('O');
             }
           }
         }
@@ -99,7 +104,7 @@ const Logic = () => {
   });
 
   return {
-    checkWinner, boxValidation, playerTurn, playerMark,
+    checkWinner, lastWinMove, boxValidation, playerTurn, playerMark,
   };
 };
 
