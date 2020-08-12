@@ -1,9 +1,9 @@
-import { Board } from './board.js'
+import { Board } from './board.js';
 
 const Logic = () => {
   const array = Board();
   let board = array.boardChoices();
-  var gameON = true;
+  let gameON = true;
   let currentPlayer = 'X';
 
   const checkWinner = (label, array) => {
@@ -20,7 +20,7 @@ const Logic = () => {
   };
 
   const stillPlayable = (b) => {
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 9; i += 1) {
       if (b[i] !== 'X' && b[i] !== 'O') {
         return true;
       }
@@ -45,34 +45,34 @@ const Logic = () => {
   const playerMark = () => {
     const td = document.querySelectorAll('.td-data');
 
-    for (let i = 0; i < td.length; i++) {
+    for (let i = 0; i < td.length; i += 1) {
       td[i].addEventListener('click', () => {
-        if (gameON){
+        if (gameON) {
           if (boxValidation(i)) {
-            let new_mark = playerTurn();
-            td[i].textContent = new_mark;
-            board[i] = new_mark;
-            if (checkWinner(new_mark, board)) {
+            const newMark = playerTurn();
+            td[i].textContent = newMark;
+            board[i] = newMark;
+            if (checkWinner(newMark, board)) {
               gameON = false;
-              if (new_mark === 'O') {
+              if (newMark === 'O') {
                 document.getElementById('one').style.fontSize = '40px';
-                document.getElementById('winner').textContent = 'WINNER!'
+                document.getElementById('winner').textContent = 'WINNER!';
               } else {
                 document.getElementById('two').style.fontSize = '40px';
-                document.getElementById('winner').textContent = 'WINNER!'
+                document.getElementById('winner').textContent = 'WINNER!';
               }
             }
             
             if(!stillPlayable(board)) {
               gameDrawn();
-              document.getElementById('winner').textContent = 'DRAW'
+              document.getElementById('winner').textContent = 'DRAW';
               gameON = false;
             }
           }
         }
-      });
+      })
     }
-  }
+  };
 
   // change mark for player turn
   let playerTurn = () => {
@@ -82,7 +82,7 @@ const Logic = () => {
 
   // restart button
   document.querySelector('#restart').addEventListener('click', () => {
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 9; i += 1) {
       document.getElementById(i).textContent = '';
     }
     document.getElementById('one').style.fontSize = '20px';
