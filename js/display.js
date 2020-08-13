@@ -67,7 +67,9 @@ const Display = () => {
   return { onloadWindow, submit, addPlayerNames };
 };
 
-const display = Display();
-display.onloadWindow();
-display.submit();
-display.addPlayerNames();
+{
+  const display = Display();
+  display.onloadWindow();
+  display.submit();
+  display.addPlayerNames();
+}

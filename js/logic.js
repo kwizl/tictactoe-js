@@ -10,7 +10,7 @@ const Logic = () => {
   const playerOne = Player(playerOneValue, 'X');
   const playerTwo = Player(playerTwoValue, 'O');
   let gameON = true;
-  let currentPlayer;
+  let currentPlayer = playerTwo.getSym();
 
   const checkWinner = (label, array) => {
     const wina = (array[0] === label) && (array[1] === label) && (array[2] === label);
@@ -59,7 +59,7 @@ const Logic = () => {
   };
 
   const lastWinMove = (mark) => {
-    if (mark === 'O') {
+    if (mark === playerOne.getSym()) {
       document.getElementById('one').style.fontSize = '40px';
       document.getElementById('winner').textContent = 'WINNER!';
     } else {
@@ -81,14 +81,14 @@ const Logic = () => {
             board[i] = newMark;
             if (checkWinner(newMark, board)) {
               gameON = false;
-              lastWinMove('O');
+              lastWinMove(newMark);
             }
             if (!stillPlayable(board) && !checkWinner(newMark, board)) {
               gameDrawn();
               document.getElementById('winner').textContent = 'DRAW';
               gameON = false;
             } else if (!stillPlayable(board) && checkWinner(newMark, board)) {
-              lastWinMove('O');
+              lastWinMove(newMark);
             }
           }
         }
@@ -114,5 +114,7 @@ const Logic = () => {
   };
 };
 
-const logic = Logic();
-logic.playerMark();
+{
+  const logic = Logic();
+  logic.playerMark();
+}
