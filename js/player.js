@@ -5,4 +5,5 @@ const Player = (name, sym) => {
   return { getName, getSym };
 };
 
+/* eslint-disable import/prefer-default-export */
 export { Player };
