@@ -1,11 +1,16 @@
-// eslint-disable-next-line import/extensions
+/* eslint-disable import/extensions */
 import { Board } from './board.js';
+import { Player } from './player.js';
 
 const Logic = () => {
   const array = Board();
   let board = array.boardChoices();
+  const playerOneValue = document.getElementById('one').textContent;
+  const playerTwoValue = document.getElementById('two').textContent;
+  const playerOne = Player(playerOneValue, 'X');
+  const playerTwo = Player(playerTwoValue, 'O');
   let gameON = true;
-  let currentPlayer = 'X';
+  let currentPlayer;
 
   const checkWinner = (label, array) => {
     const wina = (array[0] === label) && (array[1] === label) && (array[2] === label);
@@ -22,10 +27,10 @@ const Logic = () => {
 
   // change mark for player turn
   const playerTurn = () => {
-    if (currentPlayer === 'X') {
-      currentPlayer = 'O';
+    if (currentPlayer === playerOne.getSym()) {
+      currentPlayer = playerTwo.getSym();
     } else {
-      currentPlayer = 'X';
+      currentPlayer = playerOne.getSym();
     }
     return currentPlayer;
   };
@@ -100,7 +105,7 @@ const Logic = () => {
     document.getElementById('two').style.fontSize = '20px';
     board = array.boardChoices();
     document.getElementById('winner').textContent = '';
-    currentPlayer = 'X';
+    currentPlayer = playerTwo.getSym();
     gameON = true;
   });
 
