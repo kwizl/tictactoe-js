@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Game</title>
+</head>
+<body id="main">
+  <header>
+    <p>TIC TAC TOE</p>
+  </header>
+  <main>
+    <div class="player-container">
+      <div class="player">
+        <p id='one'></p>
+      </div>
+      <div class="player">
+        <p id="id">VS</p>
+      </div>
+      <div class="player">
+        <p id='two'></p>
+      </div>
+    </div>
+    <div class="winner">
+      <p id="winner"></p>
+    </div>
+    <div class="board-container">
+      <table class="board">
+        <tbody>
+          <tr class="board-row">
+            <td class='td-data' id="0"></td>
+            <td class='td-data' id="1"></td>
+            <td class='td-data' id="2"></td>
+          </tr>
+          <tr class="board-row">
+            <td class='td-data' id="3"></td>
+            <td class='td-data' id="4"></td>
+            <td class='td-data' id="5"></td>
+          </tr>
+          <tr class="board-row">
+            <td class='td-data' id="6"></td>
+            <td class='td-data' id="7" ></td>
+            <td class='td-data' id="8"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="form-wrapper">
+      <div class="form-title">
+        <p>Enter Names</p>
+        <p id ='error'></p>
+      </div>
+      <form id="player-name">
+        <input id="player-one" type="text" placeholder="Player One..." />
+        <input id="player-two" type="text" placeholder="Player Two..." />
+        <button class="btnSubmit">Enter</button>
+      </form>
+    </div> 
+    <div class="game-restart">
+      <button id="restart">Restart</button>
+    </div>
+  </main>
+  <script type="module" src="js/display.js"></script>
+  <script type="module" src="js/logic.js"></script>
+  <script type="module" src="js/board.js"></script>
+</body>
+</html>
