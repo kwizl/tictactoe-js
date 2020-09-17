@@ -1,7 +1,6 @@
-/* eslint-disable import/extensions */
-import { Board } from './board.js';
-import { Player } from './player.js';
-import { functions } from './functions.js';
+import Board from './board.js';
+import Player from './player.js';
+import functions from './functions.js';
 
 const func = functions();
 

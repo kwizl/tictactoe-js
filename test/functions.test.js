@@ -1,4 +1,4 @@
-import { functions } from '../js/functions';
+import functions from '../js/functions';
 
 describe('Test the winning logic of the game', () => {
   const main = functions();

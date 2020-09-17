@@ -34,5 +34,5 @@ const functions = () => {
     checkWinner, stillPlayable, boxValidation,
   };
 };
-/* eslint-disable import/prefer-default-export */
-export { functions };
+
+export default functions;
