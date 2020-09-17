@@ -1,10 +1,59 @@
-import Logic from '../js/logic';
+import { functions } from '../js/functions.js';
 
-// 1 - Test function checkWinner
-    // A test for each winning condition and anther one for no winner (9 total)
-// 2 - Test function playerTurn
-    // A test for each player (2 total)
-// 3 - test function StillPlayable
-    // A test for true, another for false (2 total)
-// 4 - test function boxValidation
-    // A test for true, another for false (2 total)
+describe("Test the logic of the game", () => {
+    const main = functions();
+
+    test("Winning Condition A", () => {
+        const array = ['X', 'X', 'X', , , , , , ];
+        const check = main.checkWinner('X', array);
+        expect(check).toBeTruthy();
+    });
+
+    test("Winning Condition B", () => {
+        const array = [ , , , 'X', 'X', 'X', , , ];
+        const check = main.checkWinner('X', array);
+        expect(check).toBeTruthy();
+    });
+
+    test("Winning Condition C", () => {
+        const array = [, , , , , , 'X', 'X', 'X'];
+        const check = main.checkWinner('X', array);
+        expect(check).toBeTruthy();
+    });
+
+    test("Winning Condition D", () => {
+        const array = ['X', , , 'X', , , 'X', , ];
+        const check = main.checkWinner('X', array);
+        expect(check).toBeTruthy();
+    });
+
+    test("Winning Condition E", () => {
+        const array = [ , 'X', , , 'X', , , 'X', ];
+        const check = main.checkWinner('X', array);
+        expect(check).toBeTruthy();
+    });
+
+    test("Winning Condition F", () => {
+        const array = [ , , 'X', , , 'X', , , 'X'];
+        const check = main.checkWinner('X', array);
+        expect(check).toBeTruthy();
+    });
+
+    test("Winning Condition G", () => {
+        const array = ['X', , , , 'X', , , , 'X'];
+        const check = main.checkWinner('X', array);
+        expect(check).toBeTruthy();
+    });
+
+    test("Winning Condition H", () => {
+        const array = [ , , 'X', , 'X', , 'X', , ];
+        const check = main.checkWinner('X', array);
+        expect(check).toBeTruthy();
+    });
+
+    test('No Winner', () => {
+        const array = [ , , , , , , , , ];
+        const check = main.checkWinner('X', array);
+        expect(check).toBeFalsy();
+    });
+});
