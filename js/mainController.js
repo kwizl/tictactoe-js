@@ -1,6 +1,6 @@
-import Board from './board.js';
-import Player from './player.js';
-import functions from './functions.js';
+import Board from './board';
+import Player from './player';
+import functions from './functions';
 
 const func = functions();
 
