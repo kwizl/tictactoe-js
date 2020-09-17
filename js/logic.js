@@ -118,3 +118,5 @@ const Logic = () => {
   const logic = Logic();
   logic.playerMark();
 }
+
+export default Logic;
