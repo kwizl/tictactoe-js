@@ -25,15 +25,6 @@ const mainController = (logic) => {
     return currentPlayer;
   };
 
-  const stillPlayable = (b) => {
-    for (let i = 0; i < 9; i += 1) {
-      if (b[i] !== 'X' && b[i] !== 'O') {
-        return true;
-      }
-    }
-    return false;
-  };
-
   const boxValidation = (idx) => {
     const box = document.getElementById(idx);
 
@@ -73,11 +64,11 @@ const mainController = (logic) => {
               gameON = false;
               lastWinMove(newMark);
             }
-            if (!stillPlayable(board) && !logic.checkWinner(newMark, board)) {
+            if (!logic.stillPlayable(board) && !logic.checkWinner(newMark, board)) {
               gameDrawn();
               document.getElementById('winner').textContent = 'DRAW';
               gameON = false;
-            } else if (!stillPlayable(board) && logic.checkWinner(newMark, board)) {
+            } else if (!logic.stillPlayable(board) && logic.checkWinner(newMark, board)) {
               lastWinMove(newMark);
             }
           }

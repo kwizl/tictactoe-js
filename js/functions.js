@@ -11,9 +11,18 @@ const functions = () => {
 
     return wina || winb || winc || wind || wine || winf || wing || winh;
   };
+
+  const stillPlayable = (b) => {
+    for (let i = 0; i < 9; i += 1) {
+      if (b[i] !== 'X' && b[i] !== 'O') {
+        return true;
+      }
+    }
+    return false;
+  };
   
   return {
-    checkWinner
+    checkWinner, stillPlayable
   };
 }
 /* eslint-disable import/prefer-default-export */
