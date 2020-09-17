@@ -58,7 +58,7 @@ describe("Test the winning logic of the game", () => {
   });
 });
 
-describe("Test the validation of the player choices", () => {
+describe("Test if the game has any options left to choose", () => {
   const main = functions();
 
   test("Returns true if the game still has playable options left", () => {
