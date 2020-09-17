@@ -74,18 +74,18 @@ describe('Test if the game has any options left to choose', () => {
   });
 });
 
-// describe('Test whether the player choice is valid', () => {
-//   const main = functions();
+describe('Test whether the player choice is valid', () => {
+  const main = functions();
 
-//   test.only('Returns true if the game still has playable options left', () => {
-//     document.getElementById('0').textContent = 'X';
-//     const check = main.boxValidation('0');
-//     expect(check).toBeFalsy();
-//   });
+  test('Returns true if the game still has playable options left', () => {
+    document.body.innerHTML = '<div id="0">X</div>';
+    const check = main.boxValidation(0);
+    expect(check).toBeFalsy();
+  });
 
-//   //   test("Returns false if the game has no playable options left", () => {
-//   //     const array = ["X", "O", "X", "O", "X", "X", "O", "X", "O"];
-//   //     const check = main.stillPlayable(array);
-//   //     expect(check).toBeFalsy();
-//   //   });
-// });
+  test('Returns true if the game still has playable options left', () => {
+    document.body.innerHTML = '<div id="0">bla</div>';
+    const check = main.boxValidation(0);
+    expect(check).toBeTruthy();
+  });
+});
