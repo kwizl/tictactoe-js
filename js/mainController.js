@@ -82,7 +82,7 @@ const mainController = (logic) => {
   });
 
   return {
-     lastWinMove, playerTurn, playerMark,
+    lastWinMove, playerTurn, playerMark,
   };
 };
 

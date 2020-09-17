@@ -20,7 +20,7 @@ const functions = () => {
     }
     return false;
   };
-  
+
   const boxValidation = (idx) => {
     const box = document.getElementById(idx);
 
@@ -31,8 +31,8 @@ const functions = () => {
   };
 
   return {
-    checkWinner, stillPlayable, boxValidation
+    checkWinner, stillPlayable, boxValidation,
   };
-}
+};
 /* eslint-disable import/prefer-default-export */
 export { functions };
