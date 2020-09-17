@@ -1,8 +1,11 @@
 /* eslint-disable import/extensions */
 import { Board } from './board.js';
 import { Player } from './player.js';
+import { functions } from './functions.js';
 
-const Logic = () => {
+const func = functions();
+
+const mainController = (logic) => {
   const array = Board();
   let board = array.boardChoices();
   const playerOneValue = document.getElementById('one').textContent;
@@ -11,19 +14,6 @@ const Logic = () => {
   const playerTwo = Player(playerTwoValue, 'O');
   let gameON = true;
   let currentPlayer = playerTwo.getSym();
-
-  const checkWinner = (label, array) => {
-    const wina = (array[0] === label) && (array[1] === label) && (array[2] === label);
-    const winb = (array[3] === label) && (array[4] === label) && (array[5] === label);
-    const winc = (array[6] === label) && (array[7] === label) && (array[8] === label);
-    const wind = (array[0] === label) && (array[3] === label) && (array[6] === label);
-    const wine = (array[1] === label) && (array[4] === label) && (array[7] === label);
-    const winf = (array[2] === label) && (array[5] === label) && (array[8] === label);
-    const wing = (array[0] === label) && (array[4] === label) && (array[8] === label);
-    const winh = (array[2] === label) && (array[4] === label) && (array[6] === label);
-
-    return wina || winb || winc || wind || wine || winf || wing || winh;
-  };
 
   // change mark for player turn
   const playerTurn = () => {
@@ -79,15 +69,15 @@ const Logic = () => {
             const newMark = playerTurn();
             td[i].textContent = newMark;
             board[i] = newMark;
-            if (checkWinner(newMark, board)) {
+            if (logic.checkWinner(newMark, board)) {
               gameON = false;
               lastWinMove(newMark);
             }
-            if (!stillPlayable(board) && !checkWinner(newMark, board)) {
+            if (!stillPlayable(board) && !logic.checkWinner(newMark, board)) {
               gameDrawn();
               document.getElementById('winner').textContent = 'DRAW';
               gameON = false;
-            } else if (!stillPlayable(board) && checkWinner(newMark, board)) {
+            } else if (!stillPlayable(board) && logic.checkWinner(newMark, board)) {
               lastWinMove(newMark);
             }
           }
@@ -110,13 +100,11 @@ const Logic = () => {
   });
 
   return {
-    checkWinner, lastWinMove, boxValidation, playerTurn, playerMark,
+     lastWinMove, boxValidation, playerTurn, playerMark,
   };
 };
 
 {
-  const logic = Logic();
+  const logic = mainController(func);
   logic.playerMark();
 }
-
-export default Logic;
