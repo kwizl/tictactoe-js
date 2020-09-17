@@ -21,8 +21,17 @@ const functions = () => {
     return false;
   };
   
+  const boxValidation = (idx) => {
+    const box = document.getElementById(idx);
+
+    if (box.textContent === 'X' || box.textContent === 'O') {
+      return false;
+    }
+    return true;
+  };
+
   return {
-    checkWinner, stillPlayable
+    checkWinner, stillPlayable, boxValidation
   };
 }
 /* eslint-disable import/prefer-default-export */

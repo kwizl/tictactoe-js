@@ -25,15 +25,6 @@ const mainController = (logic) => {
     return currentPlayer;
   };
 
-  const boxValidation = (idx) => {
-    const box = document.getElementById(idx);
-
-    if (box.textContent === 'X' || box.textContent === 'O') {
-      return false;
-    }
-    return true;
-  };
-
   const gameDrawn = () => {
     document.getElementById('one').style.fontSize = '45px';
     document.getElementById('two').style.fontSize = '45px';
@@ -56,7 +47,7 @@ const mainController = (logic) => {
       // eslint-disable-next-line no-loop-func
       td[i].addEventListener('click', () => {
         if (gameON) {
-          if (boxValidation(i)) {
+          if (logic.boxValidation(i)) {
             const newMark = playerTurn();
             td[i].textContent = newMark;
             board[i] = newMark;
@@ -91,7 +82,7 @@ const mainController = (logic) => {
   });
 
   return {
-     lastWinMove, boxValidation, playerTurn, playerMark,
+     lastWinMove, playerTurn, playerMark,
   };
 };
 
