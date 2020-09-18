@@ -1,0 +1,31 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "A game designed fully on javascript ",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwizl/tictactoe-js.git"
+  },
+  "author": "kwizl / rsnazario",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwizl/tictactoe-js/issues"
+  },
+  "homepage": "https://github.com/kwizl/tictactoe-js#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^26.4.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}

@@ -7,5 +7,4 @@ const Board = () => {
   return { boardChoices };
 };
 
-/* eslint-disable import/prefer-default-export */
-export { Board };
+export default Board;

@@ -25,6 +25,7 @@ This app is a Tic-Tac-Toe game develop entirely in Javascript using specially th
   <li>Register Players' Names</li>
   <li>Play the Game by Clicking the Positions</li>
   <li>Restart the Game at any time</li>
+  <li>Run tests on console</li>
 </ul>
 
 ## Built With
@@ -33,6 +34,7 @@ This app is a Tic-Tac-Toe game develop entirely in Javascript using specially th
 - CSS3
 - Javascript
 - ESLint (Linter) with Stickler (CI Tool)
+- Jest
 - Git, Github and VScode
 <br>
 
@@ -49,6 +51,8 @@ Otherwise just hit (Download Zip) on green button (Clone or Download) at top of 
 
 In order to run the App on your browser, just open the `index.html` on your Browser.
 Another option is to just click on `Go Live` on your Coding Platform.
+
+In order to run the tests, run on your console ```npm install``` and then run the script ```npm test```.
 
 ### Contributing
 
