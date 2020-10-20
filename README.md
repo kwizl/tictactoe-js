@@ -1,5 +1,5 @@
-# tictactoe-js
-This app is a Tic-Tac-Toe game develop entirely in Javascript using specially the DOM manipulation. Full Project Description [here](https://www.theodinproject.com/courses/javascript/lessons/tic-tac-toe-javascript)
+# Tic-Tac-Toe js
+This app is a Tic-Tac-Toe game develop entirely in Javascript using DOM manipulation. Full Project Description [here](https://www.theodinproject.com/courses/javascript/lessons/tic-tac-toe-javascript)
 ## Screenshots
 
 ![screenshot](https://cdn.mathpix.com/snip/images/80QjOOyLGp9ZWerRDJOOKEZeJIz9WF2p3RbyvTgqHoY.original.fullsize.png)
@@ -35,34 +35,34 @@ This app is a Tic-Tac-Toe game develop entirely in Javascript using specially th
 - Javascript
 - ESLint (Linter) with Stickler (CI Tool)
 - Jest
-- Git, Github and VScode
+- Git, Github, and Visual Studio Code
 <br>
 
 ## Getting Start
 
 #### Get a local copy
-Now you need a copy of this application, if you are using Git:
+Now you need a copy of this application if you are using Git:
 ```js
 git@github.com:kwizl/tictactoe-js.git
 ```
-Otherwise just hit (Download Zip) on green button (Clone or Download) at top of this page.
+Otherwise, just hit (Download Zip) on the green button (Clone or Download) on this page.
 
 #### Run App
 
-In order to run the App on your browser, just open the `index.html` on your Browser.
-Another option is to just click on `Go Live` on your Coding Platform.
+To run the application, open the `index.html` on your web.
+Another option is to click on `Go Live` on your Coding Platform.
 
-In order to run the tests, run on your console ```npm install``` and then run the script ```npm test```.
+To run the tests, run on your console ```npm install``` and then run the script ```npm test```.
 
 ### Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 You can do it on [issues page](issues/).
 
 ## Acknowledgments
 
-A special thanks for all Microverse Team and Code Reviewers that guides me through my learning.
+A special thanks to all Microverse Team and Code Reviewers that guide me through my learning.
 
 ## Authors
 
@@ -78,6 +78,3 @@ A special thanks for all Microverse Team and Code Reviewers that guides me throu
 - Twitter: [@@rsnazario](https://twitter.com/@rsnazario)
 - Linkedin: [Rafael Nazario](https://www.linkedin.com/in/rsnazario/)
 
-## Show your support
-
-Give a ⭐️ if you like this project!
