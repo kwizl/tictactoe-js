@@ -1,5 +1,7 @@
 # Tic-Tac-Toe js
-This app is a Tic-Tac-Toe game develop entirely in Javascript using DOM manipulation. Full Project Description [here](https://www.theodinproject.com/courses/javascript/lessons/tic-tac-toe-javascript)
+
+This app is a Tic-Tac-Toe game developed entirely in Javascript using the DOM manipulation. Full Project Description [here](https://www.theodinproject.com/courses/javascript/lessons/tic-tac-toe-javascript)
+
 ## Screenshots
 
 ![screenshot](https://cdn.mathpix.com/snip/images/80QjOOyLGp9ZWerRDJOOKEZeJIz9WF2p3RbyvTgqHoY.original.fullsize.png)
